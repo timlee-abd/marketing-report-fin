@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing Report 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #F0F2F5; color: #1a1a2e; min-height: 100vh; }
+  header { background: #1a1a2e; padding: 20px 32px; display: flex; align-items: center; gap: 16px; }
+  header h1 { color: #fff; font-size: 18px; font-weight: 600; letter-spacing: 0.02em; }
+  header span { color: #6B8CFF; font-size: 13px; font-weight: 400; background: rgba(107,140,255,0.12); padding: 3px 10px; border-radius: 20px; }
+  .tabs-bar { background: #1a1a2e; padding: 0 32px; display: flex; gap: 4px; border-bottom: 2px solid #2d2d4e; }
+  .tab-btn { padding: 10px 22px; background: none; border: none; color: #8888aa; font-size: 13px; font-weight: 500; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: color .15s, border-color .15s; letter-spacing: 0.03em; }
+  .tab-btn:hover { color: #ccc; }
+  .tab-btn.active { color: #fff; border-bottom-color: #6B8CFF; }
+  .tab-content { display: none; padding: 28px 32px 48px; max-width: 960px; }
+  .tab-content.active { display: block; }
+  .month-header { display: flex; align-items: baseline; gap: 14px; margin-bottom: 24px; }
+  .month-header h2 { font-size: 24px; font-weight: 700; color: #1a1a2e; }
+  .month-total { font-size: 20px; font-weight: 300; color: #6B8CFF; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 12px; margin-bottom: 28px; }
+  .card { background: #fff; border-radius: 10px; padding: 14px 16px; border-left: 3px solid var(--accent); box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .card-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #888; margin-bottom: 6px; }
+  .card-amount { font-size: 18px; font-weight: 700; color: #1a1a2e; }
+  .section { background: #fff; border-radius: 12px; margin-bottom: 14px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .section-header { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; background: var(--accent); cursor: pointer; user-select: none; }
+  .section-header h3 { font-size: 13px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.08em; display: flex; align-items: center; gap: 8px; }
+  .section-header .sec-total { font-size: 15px; font-weight: 700; color: #fff; }
+  .chevron { color: rgba(255,255,255,0.7); font-size: 11px; transition: transform .2s; }
+  .collapsed .chevron { transform: rotate(-90deg); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #F7F8FA; border-bottom: 1px solid #EAECF0; }
+  thead th { padding: 9px 20px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: #888; text-align: left; }
+  thead th:last-child { text-align: right; }
+  tbody tr { border-bottom: 1px solid #F2F4F7; transition: background .1s; }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: #FAFBFF; }
+  tbody td { padding: 9px 20px; font-size: 13px; color: #2d2d4e; }
+  tbody td:last-child { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  /* CONCLUSION */
+  .conclusion { margin-top: 32px; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .conclusion-title { background: #1a1a2e; padding: 14px 24px; font-size: 12px; font-weight: 700; color: #6B8CFF; text-transform: uppercase; letter-spacing: 0.1em; }
+  .conclusion-row { display: flex; justify-content: space-between; align-items: center; padding: 13px 24px; background: #fff; border-bottom: 1px solid #F0F2F5; }
+  .conclusion-row:last-of-type { border-bottom: none; }
+  .conclusion-row .c-label { font-size: 13px; color: #555; display: flex; align-items: center; gap: 8px; }
+  .conclusion-row .c-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+  .conclusion-row .c-amount { font-size: 15px; font-weight: 700; color: #1a1a2e; font-variant-numeric: tabular-nums; }
+  .conclusion-total { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: #1a1a2e; }
+  .conclusion-total span:first-child { font-size: 13px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.08em; }
+  .conclusion-total span:last-child { font-size: 22px; font-weight: 700; color: #6B8CFF; font-variant-numeric: tabular-nums; }
+
+  .sec-performance { --accent: #2E75B6; }
+  .sec-subcontractors { --accent: #375623; }
+  .sec-payroll  { --accent: #7B3F00; }
+  .sec-soft     { --accent: #5C5C8A; }
+  .sec-homeshow { --accent: #C05B2A; }
+  .sec-gifts    { --accent: #A84B9B; }
+  .sec-hiring   { --accent: #2E86AB; }
+  .sec-print    { --accent: #7A7A7A; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>American Building Development — Marketing Report</h1>
+  <span>2026</span>
+</header>
+
+<div class="tabs-bar">
+  <button class="tab-btn active" onclick="showTab('summary', this)">Summary</button>
+  <button class="tab-btn" onclick="showTab('performance', this)">Plan vs Fact</button>
+  <button class="tab-btn" onclick="showTab('jan', this)">January</button>
+  <button class="tab-btn" onclick="showTab('feb', this)">February</button>
+  <button class="tab-btn" onclick="showTab('mar', this)">March</button>
+  <button class="tab-btn" onclick="showTab('apr', this)">April</button>
+  <button class="tab-btn" onclick="showTab('may', this)">May</button>
+  <button class="tab-btn" onclick="showTab('jun', this)">June</button>
+  <button class="tab-btn" onclick="showTab('jul', this)">July</button>
+</div>
+
+<!-- ═══════════════════════════ JANUARY ═══════════════════════════ -->
+<!-- ═══════════════════════════ PLAN VS FACT ════════════════════════════ -->
+<div id="performance" class="tab-content">
+  <div class="month-header">
+    <h2>Plan vs Fact — 2026</h2>
+    <span class="month-total">January — July</span>
+  </div>
+
+<style>
+.pvf-wrap { overflow-x: auto; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.pvf-table { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 1000px; }
+.pvf-table th { padding: 8px 10px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #fff; text-align: right; white-space: nowrap; }
+.pvf-table th:first-child { text-align: left; min-width: 80px; }
+.pvf-table td { padding: 9px 10px; border-bottom: 1px solid #F0F2F5; text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; background:#fff; }
+.pvf-table td:first-child { text-align: left; font-weight: 600; color: #1a1a2e; }
+.pvf-table tr:hover td { background: #FAFBFF; }
+.pvf-table tr.ytd-row td { background: #1a1a2e !important; color: #fff; font-weight: 700; border-bottom: none; border-top: 2px solid #1a1a2e; }
+.pvf-table tr.ytd-row td:first-child { color: #6B8CFF; }
+.pct-green  { color: #1D9E75; font-weight: 700; }
+.pct-orange { color: #E67E22; font-weight: 700; }
+.pct-red    { color: #C0392B; font-weight: 700; }
+.val-dim    { color: #888; }
+.val-bold   { font-weight: 700; color: #1a1a2e; }
+.grp-th-budget { background: #2E75B6 !important; }
+.grp-th-perf   { background: #375623 !important; }
+.grp-th-non    { background: #7B3F00 !important; }
+.grp-th-total  { background: #5C5C8A !important; }
+.grp-th-extra  { background: #1a1a2e !important; }
+</style>
+
+<div class="pvf-wrap">
+<table class="pvf-table">
+  <thead>
+    <tr>
+      <th style="background:#1a1a2e; text-align:left;">Month</th>
+      <th class="grp-th-budget">Plan Budget</th>
+      <th class="grp-th-budget">% Sales Plan</th>
+      <th class="grp-th-perf">Perf Fact</th>
+      <th class="grp-th-perf">% Sales Plan</th>
+      <th class="grp-th-non">Non-Perf</th>
+      <th class="grp-th-non">% Sales Plan</th>
+      <th class="grp-th-total">Total Mkt</th>
+      <th class="grp-th-total">% Sales Plan</th>
+      <th class="grp-th-extra">% Mkt Plan</th>
+      <th class="grp-th-extra">% Fact Sales</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>January</td>
+      <td class="val-dim">$74.7K</td><td class="val-dim">10.7%</td>
+      <td class="val-bold">$96.6K</td><td class="pct-red">13.8%</td>
+      <td class="val-bold">$26.2K</td><td class="pct-red">3.7%</td>
+      <td class="val-bold">$122.8K</td><td class="pct-red">17.5%</td>
+      <td class="pct-red">164%</td><td class="pct-red">19.2%</td>
+    </tr>
+    <tr>
+      <td>February</td>
+      <td class="val-dim">$65.3K</td><td class="val-dim">10.7%</td>
+      <td class="val-bold">$71.8K</td><td class="pct-orange">11.7%</td>
+      <td class="val-bold">$14.6K</td><td class="pct-green">2.4%</td>
+      <td class="val-bold">$86.4K</td><td class="pct-orange">14.1%</td>
+      <td class="pct-orange">132%</td><td class="pct-green">9.1%</td>
+    </tr>
+    <tr>
+      <td>March</td>
+      <td class="val-dim">$158.7K</td><td class="val-dim">10.6%</td>
+      <td class="val-bold">$93.4K</td><td class="pct-green">6.2%</td>
+      <td class="val-bold">$9.5K</td><td class="pct-green">0.6%</td>
+      <td class="val-bold">$102.9K</td><td class="pct-green">6.9%</td>
+      <td class="pct-green">65%</td><td class="pct-green">7.4%</td>
+    </tr>
+    <tr>
+      <td>April</td>
+      <td class="val-dim">$84.0K</td><td class="val-dim">10.7%</td>
+      <td class="val-bold">$133.1K</td><td class="pct-red">16.9%</td>
+      <td class="val-bold">$17.5K</td><td class="pct-orange">2.2%</td>
+      <td class="val-bold">$150.6K</td><td class="pct-red">19.1%</td>
+      <td class="pct-red">179%</td><td class="pct-orange">13.7%</td>
+    </tr>
+    <tr>
+      <td>May</td>
+      <td class="val-dim">$214.7K</td><td class="val-dim">10.7%</td>
+      <td class="val-bold">$150.8K</td><td class="pct-green">7.5%</td>
+      <td class="val-bold">$13.9K</td><td class="pct-green">0.7%</td>
+      <td class="val-bold">$164.7K</td><td class="pct-green">8.2%</td>
+      <td class="pct-green">77%</td><td class="pct-orange">12.7%</td>
+    </tr>
+    <tr>
+      <td>June</td>
+      <td class="val-dim">$168.0K</td><td class="val-dim">10.5%</td>
+      <td class="val-bold">$173.6K</td><td class="pct-orange">10.8%</td>
+      <td class="val-bold">$21.0K</td><td class="pct-orange">1.3%</td>
+      <td class="val-bold">$194.6K</td><td class="pct-orange">12.2%</td>
+      <td class="pct-orange">116%</td><td class="pct-red">17.7%</td>
+    </tr>
+    <tr>
+      <td>July</td>
+      <td class="val-dim">$168.0K</td><td class="val-dim">10.5%</td>
+      <td class="val-bold">$184.4K</td><td class="pct-orange">11.5%</td>
+      <td class="val-bold">$18.3K</td><td class="pct-orange">1.1%</td>
+      <td class="val-bold">$202.7K</td><td class="pct-orange">12.7%</td>
+      <td class="pct-orange">121%</td><td class="pct-orange">10.7%</td>
+    </tr>
+    <tr class="ytd-row">
+      <td>YTD</td>
+      <td>$933.4K</td><td style="color:#aaa;">10.6%</td>
+      <td>$903.7K</td><td style="color:#6B8CFF;">10.3%</td>
+      <td>$120.9K</td><td style="color:#6B8CFF;">1.4%</td>
+      <td>$1,024.6K</td><td style="color:#6B8CFF;">11.6%</td>
+      <td style="color:#E67E22;">110%</td><td style="color:#6B8CFF;">12.2%</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div style="margin-top:16px; display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px;">
+  <div style="background:#fff; border-radius:10px; padding:14px 16px; border-left:3px solid #2E75B6; box-shadow:0 1px 4px rgba(0,0,0,.06);">
+    <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:6px;">YTD Sales Closed</div>
+    <div style="font-size:18px;font-weight:700;">$8.39M</div>
+    <div style="font-size:12px;color:#888;">vs $8.80M plan (95%)</div>
+  </div>
+  <div style="background:#fff; border-radius:10px; padding:14px 16px; border-left:3px solid #375623; box-shadow:0 1px 4px rgba(0,0,0,.06);">
+    <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:6px;">Perf Channels YTD</div>
+    <div style="font-size:18px;font-weight:700;">$903.7K</div>
+    <div style="font-size:12px;color:#888;">vs $933.4K plan (97%)</div>
+  </div>
+  <div style="background:#fff; border-radius:10px; padding:14px 16px; border-left:3px solid #7B3F00; box-shadow:0 1px 4px rgba(0,0,0,.06);">
+    <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:6px;">Non-Performance YTD</div>
+    <div style="font-size:18px;font-weight:700;">$120.9K</div>
+    <div style="font-size:12px;color:#888;">13% of Perf Plan</div>
+  </div>
+  <div style="background:#fff; border-radius:10px; padding:14px 16px; border-left:3px solid #5C5C8A; box-shadow:0 1px 4px rgba(0,0,0,.06);">
+    <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:6px;">Total Mkt / Sales</div>
+    <div style="font-size:18px;font-weight:700;">11.6%</div>
+    <div style="font-size:12px;color:#888;">$1.02M of $8.39M closed</div>
+  </div>
+</div>
+
+</div>
+
+<!-- ═══════════════════════════ SUMMARY ════════════════════════════ -->
+<div id="summary" class="tab-content active">
+  <div class="month-header">
+    <h2>2026 Year-to-Date Summary</h2>
+    <span class="month-total">January — July</span>
+  </div>
+
+  <!-- YTD TOTALS -->
+  <div class="cards" style="margin-bottom:32px;">
+    <div class="card sec-performance"><div class="card-label">Performance Channels</div><div class="card-amount">$903,689</div></div>
+    <div class="card sec-subcontractors"><div class="card-label">Non-Performance</div><div class="card-amount">$120,950</div></div>
+    <div class="card sec-payroll"><div class="card-label">Payroll</div><div class="card-amount">$90,116</div></div>
+    <div class="card sec-hiring"><div class="card-label">Hiring</div><div class="card-amount">$2,459</div></div>
+    <div class="card" style="--accent:#888;"><div class="card-label">Refunds</div><div class="card-amount" style="color:#c00;">-$1,995</div></div>
+    <div class="card" style="--accent:#1a1a2e; background:#1a1a2e;"><div class="card-label" style="color:#6B8CFF;">YTD Total</div><div class="card-amount" style="color:#fff;">$1,115,218</div></div>
+  </div>
+
+  <!-- MONTHLY BREAKDOWN TABLE -->
+  <div class="section" style="--accent:#1a1a2e;">
+    <div class="section-header" style="background:#1a1a2e; cursor:default;">
+      <h3>Monthly Breakdown</h3>
+      <span class="sec-total">$1,115,218.11</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th style="text-align:right;">Perf. Channels</th>
+          <th style="text-align:right;">Non-Performance</th>
+          <th style="text-align:right;">Payroll</th>
+          <th style="text-align:right;">Hiring</th>
+          <th style="text-align:right;">Refunds</th>
+          <th style="text-align:right;">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>January</td><td style="text-align:right;">$96,592</td><td style="text-align:right;">$26,165</td><td style="text-align:right;">$7,000</td><td style="text-align:right;">$204</td><td style="text-align:right;">—</td><td style="text-align:right;font-weight:700;">$129,961</td></tr>
+        <tr><td>February</td><td style="text-align:right;">$71,792</td><td style="text-align:right;">$14,621</td><td style="text-align:right;">$9,384</td><td style="text-align:right;">$1,708</td><td style="text-align:right;">—</td><td style="text-align:right;font-weight:700;">$97,505</td></tr>
+        <tr><td>March</td><td style="text-align:right;">$93,376</td><td style="text-align:right;">$9,535</td><td style="text-align:right;">$7,982</td><td style="text-align:right;">$298</td><td style="text-align:right;">—</td><td style="text-align:right;font-weight:700;">$111,191</td></tr>
+        <tr><td>April</td><td style="text-align:right;">$133,119</td><td style="text-align:right;">$17,482</td><td style="text-align:right;">$10,507</td><td style="text-align:right;">$249</td><td style="text-align:right;color:#c00;">-$1,995</td><td style="text-align:right;font-weight:700;">$159,363</td></tr>
+        <tr><td>May</td><td style="text-align:right;">$150,828</td><td style="text-align:right;">$13,856</td><td style="text-align:right;">$18,035</td><td style="text-align:right;">—</td><td style="text-align:right;">—</td><td style="text-align:right;font-weight:700;">$182,720</td></tr>
+        <tr><td>June</td><td style="text-align:right;">$173,582</td><td style="text-align:right;">$21,031</td><td style="text-align:right;">$13,657</td><td style="text-align:right;">—</td><td style="text-align:right;">—</td><td style="text-align:right;font-weight:700;">$208,270</td></tr>
+        <tr><td>July</td><td style="text-align:right;">$184,399</td><td style="text-align:right;">$18,259</td><td style="text-align:right;">$23,551</td><td style="text-align:right;">—</td><td style="text-align:right;">—</td><td style="text-align:right;font-weight:700;">$226,208</td></tr>
+        <tr style="background:#F7F8FA;border-top:2px solid #1a1a2e;">
+          <td style="font-weight:700;">YTD Total</td>
+          <td style="text-align:right;font-weight:700;color:#2E75B6;">$903,689</td>
+          <td style="text-align:right;font-weight:700;color:#375623;">$120,950</td>
+          <td style="text-align:right;font-weight:700;color:#7B3F00;">$90,116</td>
+          <td style="text-align:right;font-weight:700;color:#2E86AB;">$2,459</td>
+          <td style="text-align:right;font-weight:700;color:#c00;">-$1,995</td>
+          <td style="text-align:right;font-weight:700;font-size:15px;">$1,115,218</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- % BREAKDOWN -->
+  <div class="section" style="--accent:#2E75B6; margin-top:16px;">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>YTD Budget Allocation <span class="chevron">▼</span></h3>
+      <span class="sec-total">100%</span>
+    </div>
+    <table>
+      <thead><tr><th>Category</th><th style="text-align:right;">Amount</th><th style="text-align:right;">% of Total</th></tr></thead>
+      <tbody>
+        <tr><td>Performance Channels</td><td style="text-align:right;">$903,689</td><td style="text-align:right;">81.0%</td></tr>
+        <tr><td>Non-Performance</td><td style="text-align:right;">$120,950</td><td style="text-align:right;">10.8%</td></tr>
+        <tr><td>Payroll</td><td style="text-align:right;">$90,116</td><td style="text-align:right;">8.1%</td></tr>
+        <tr><td>Hiring</td><td style="text-align:right;">$2,459</td><td style="text-align:right;">0.2%</td></tr>
+        <tr><td style="color:#c00;">Refunds</td><td style="text-align:right;color:#c00;">-$1,995</td><td style="text-align:right;color:#c00;">-0.2%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- MONTH OVER MONTH GROWTH -->
+  <div class="section" style="--accent:#375623; margin-top:16px;">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Month-over-Month Growth <span class="chevron">▼</span></h3>
+      <span class="sec-total"></span>
+    </div>
+    <table>
+      <thead><tr><th>Period</th><th style="text-align:right;">Total Spend</th><th style="text-align:right;">Change</th><th style="text-align:right;">Growth</th></tr></thead>
+      <tbody>
+        <tr><td>January</td><td style="text-align:right;">$129,961</td><td style="text-align:right;">—</td><td style="text-align:right;">—</td></tr>
+        <tr><td>February</td><td style="text-align:right;">$97,505</td><td style="text-align:right;color:#c00;">-$32,456</td><td style="text-align:right;color:#c00;">-25.0%</td></tr>
+        <tr><td>March</td><td style="text-align:right;">$111,191</td><td style="text-align:right;color:green;">+$13,686</td><td style="text-align:right;color:green;">+14.0%</td></tr>
+        <tr><td>April</td><td style="text-align:right;">$159,363</td><td style="text-align:right;color:green;">+$48,172</td><td style="text-align:right;color:green;">+43.3%</td></tr>
+        <tr><td>May</td><td style="text-align:right;">$182,720</td><td style="text-align:right;color:green;">+$23,357</td><td style="text-align:right;color:green;">+14.7%</td></tr>
+        <tr><td>June</td><td style="text-align:right;">$208,270</td><td style="text-align:right;color:green;">+$25,550</td><td style="text-align:right;color:green;">+14.0%</td></tr>
+        <tr><td>July</td><td style="text-align:right;">$226,208</td><td style="text-align:right;color:green;">+$17,938</td><td style="text-align:right;color:green;">+8.6%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div id="jan" class="tab-content">
+  <div class="month-header">
+    <h2>January 2026</h2>
+    <span class="month-total">$129,960.64</span>
+  </div>
+
+  <div class="cards">
+    <div class="card sec-performance"><div class="card-label">Performance Channels</div><div class="card-amount">$96,592</div></div>
+    <div class="card sec-subcontractors"><div class="card-label">Subcontractors</div><div class="card-amount">$23,438</div></div>
+    <div class="card sec-payroll"><div class="card-label">Payroll</div><div class="card-amount">$7,000</div></div>
+    <div class="card sec-soft"><div class="card-label">Soft</div><div class="card-amount">$443</div></div>
+    <div class="card sec-homeshow"><div class="card-label">Home Show</div><div class="card-amount">$1,850</div></div>
+    <div class="card sec-gifts"><div class="card-label">Gifts</div><div class="card-amount">$434</div></div>
+    <div class="card sec-hiring"><div class="card-label">Hiring</div><div class="card-amount">$204</div></div>
+  </div>
+
+  <div class="section sec-performance">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Performance Channels <span class="chevron">▼</span></h3>
+      <span class="sec-total">$96,591.80</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Google Ads</td><td>$47,619.61</td></tr>
+        <tr><td>GrowMail</td><td>$10,368.32</td></tr>
+        <tr><td>Home Concepts</td><td>$9,824.00</td></tr>
+        <tr><td>Yelp</td><td>$9,298.68</td></tr>
+        <tr><td>Angi Leads</td><td>$8,471.01</td></tr>
+        <tr><td>Thumbtack</td><td>$6,581.05</td></tr>
+        <tr><td>Facebook / Meta Ads</td><td>$2,668.13</td></tr>
+        <tr><td>Siren Group (HomeBuddy)</td><td>$610.00</td></tr>
+        <tr><td>Velocity Marketing (Sacramento Dry Rot)</td><td>$500.00</td></tr>
+        <tr><td>SEO (Backlinks)</td><td>$600.00</td></tr>
+        <tr><td>BBB</td><td>$51.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-subcontractors">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Subcontractors <span class="chevron">▼</span></h3>
+      <span class="sec-total">$23,438.00</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Ride The Wave</td><td>$8,280.00</td></tr>
+        <tr><td>Loona Agency</td><td>$6,100.00</td></tr>
+        <tr><td>Adhead Digital</td><td>$3,963.00</td></tr>
+        <tr><td>Lee Agency</td><td>$3,100.00</td></tr>
+        <tr><td>Realtop LLC</td><td>$1,995.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-payroll">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Payroll <span class="chevron">▼</span></h3>
+      <span class="sec-total">$7,000.00</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Tim Li</td><td>$7,000.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-soft">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Soft <span class="chevron">▼</span></h3>
+      <span class="sec-total">$442.80</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>CallRail</td><td>$184.81</td></tr>
+        <tr><td>OptiSigns</td><td>$120.00</td></tr>
+        <tr><td>HighLevel</td><td>$97.00</td></tr>
+        <tr><td>Shutterstock</td><td>$29.00</td></tr>
+        <tr><td>MetaPay</td><td>$11.99</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-homeshow">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Home Show <span class="chevron">▼</span></h3>
+      <span class="sec-total">$1,850.00</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>National Expo Group</td><td>$1,850.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-gifts">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Gifts <span class="chevron">▼</span></h3>
+      <span class="sec-total">$433.91</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Starbucks</td><td>$250.00</td></tr>
+        <tr><td>Crown Awards</td><td>$183.91</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-hiring">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Hiring <span class="chevron">▼</span></h3>
+      <span class="sec-total">$204.13</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Indeed</td><td>$204.13</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">Monthly Summary</div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#2E75B6"></span>Performance Channels</span>
+      <span class="c-amount">$96,591.80</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#6B8CFF"></span>Non-Performance <span style="font-size:11px;color:#aaa">(Subcontractors + Soft + Home Show + Gifts)</span></span>
+      <span class="c-amount">$26,164.71</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#7B3F00"></span>Payroll</span>
+      <span class="c-amount">$7,000.00</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#2E86AB"></span>Hiring</span>
+      <span class="c-amount">$204.13</span>
+    </div>
+    <div class="conclusion-total">
+      <span>Total — January 2026</span>
+      <span>$129,960.64</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ FEBRUARY ════════════════════════════ -->
+<div id="feb" class="tab-content">
+  <div class="month-header">
+    <h2>February 2026</h2>
+    <span class="month-total">$97,505.12</span>
+  </div>
+
+  <div class="cards">
+    <div class="card sec-performance"><div class="card-label">Performance Channels</div><div class="card-amount">$71,792</div></div>
+    <div class="card sec-subcontractors"><div class="card-label">Subcontractors</div><div class="card-amount">$11,931</div></div>
+    <div class="card sec-payroll"><div class="card-label">Payroll</div><div class="card-amount">$9,384</div></div>
+    <div class="card sec-soft"><div class="card-label">Soft</div><div class="card-amount">$463</div></div>
+    <div class="card sec-homeshow"><div class="card-label">Home Show</div><div class="card-amount">$1,346</div></div>
+    <div class="card sec-gifts"><div class="card-label">Gifts</div><div class="card-amount">$758</div></div>
+    <div class="card sec-hiring"><div class="card-label">Hiring</div><div class="card-amount">$1,708</div></div>
+    <div class="card sec-print"><div class="card-label">Print</div><div class="card-amount">$123</div></div>
+  </div>
+
+  <div class="section sec-performance">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Performance Channels <span class="chevron">▼</span></h3>
+      <span class="sec-total">$71,792.07</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Google Ads</td><td>$33,244.36</td></tr>
+        <tr><td>Angi Leads</td><td>$9,079.41</td></tr>
+        <tr><td>Home Concepts</td><td>$8,492.00</td></tr>
+        <tr><td>Yelp</td><td>$8,476.18</td></tr>
+        <tr><td>Thumbtack</td><td>$5,166.92</td></tr>
+        <tr><td>The HomeMag</td><td>$3,710.00</td></tr>
+        <tr><td>Facebook / Meta Ads</td><td>$1,775.01</td></tr>
+        <tr><td>SEO (Backlinks)</td><td>$1,160.00</td></tr>
+        <tr><td>Siren Group (HomeBuddy)</td><td>$530.00</td></tr>
+        <tr><td>HomeGuide</td><td>$84.46</td></tr>
+        <tr><td>BBB</td><td>$51.00</td></tr>
+        <tr><td>GrowMail</td><td>$22.73</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-subcontractors">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Subcontractors <span class="chevron">▼</span></h3>
+      <span class="sec-total">$11,931.00</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Loona Agency</td><td>$6,100.00</td></tr>
+        <tr><td>Adhead Digital</td><td>$2,190.00</td></tr>
+        <tr><td>Lee Agency</td><td>$3,500.00</td></tr>
+        <tr><td>Diana Hurina</td><td>$141.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-payroll">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Payroll <span class="chevron">▼</span></h3>
+      <span class="sec-total">$9,384.12</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Tim Li</td><td>$7,000.00</td></tr>
+        <tr><td>Vladyslava Kuznietsova</td><td>$2,384.12</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-soft">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Soft <span class="chevron">▼</span></h3>
+      <span class="sec-total">$463.10</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>CallRail</td><td>$205.11</td></tr>
+        <tr><td>OptiSigns</td><td>$120.00</td></tr>
+        <tr><td>HighLevel</td><td>$97.00</td></tr>
+        <tr><td>Shutterstock</td><td>$29.00</td></tr>
+        <tr><td>MetaPay</td><td>$11.99</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-homeshow">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Home Show <span class="chevron">▼</span></h3>
+      <span class="sec-total">$1,346.00</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Metro Expositions</td><td>$1,346.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-gifts">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Gifts <span class="chevron">▼</span></h3>
+      <span class="sec-total">$757.95</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Safeway</td><td>$507.95</td></tr>
+        <tr><td>Starbucks</td><td>$250.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-hiring">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Hiring <span class="chevron">▼</span></h3>
+      <span class="sec-total">$1,707.66</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Bazar Club LLC</td><td>$1,500.00</td></tr>
+        <tr><td>Indeed</td><td>$207.66</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-print">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Print <span class="chevron">▼</span></h3>
+      <span class="sec-total">$123.22</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>VistaPrint</td><td>$123.22</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">Monthly Summary</div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#2E75B6"></span>Performance Channels</span>
+      <span class="c-amount">$71,792.07</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#6B8CFF"></span>Non-Performance <span style="font-size:11px;color:#aaa">(Subcontractors + Soft + Home Show + Gifts + Print)</span></span>
+      <span class="c-amount">$13,865.27</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#7B3F00"></span>Payroll</span>
+      <span class="c-amount">$9,384.12</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#2E86AB"></span>Hiring</span>
+      <span class="c-amount">$1,707.66</span>
+    </div>
+    <div class="conclusion-total">
+      <span>Total — February 2026</span>
+      <span>$97,505.12</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ MARCH ════════════════════════════ -->
+<div id="mar" class="tab-content">
+  <div class="month-header">
+    <h2>March 2026</h2>
+    <span class="month-total">$111,191.26</span>
+  </div>
+
+  <div class="cards">
+    <div class="card sec-performance"><div class="card-label">Performance Channels</div><div class="card-amount">$93,376</div></div>
+    <div class="card sec-subcontractors"><div class="card-label">Subcontractors</div><div class="card-amount">$7,831</div></div>
+    <div class="card sec-payroll"><div class="card-label">Payroll</div><div class="card-amount">$7,982</div></div>
+    <div class="card sec-soft"><div class="card-label">Soft</div><div class="card-amount">$1,104</div></div>
+    <div class="card sec-gifts"><div class="card-label">Gifts</div><div class="card-amount">$508</div></div>
+    <div class="card sec-hiring"><div class="card-label">Hiring</div><div class="card-amount">$298</div></div>
+    <div class="card sec-print"><div class="card-label">Print</div><div class="card-amount">$92</div></div>
+  </div>
+
+  <div class="section sec-performance">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Performance Channels <span class="chevron">▼</span></h3>
+      <span class="sec-total">$93,376.33</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Google Ads</td><td>$43,664.16</td></tr>
+        <tr><td>Yelp</td><td>$16,901.62</td></tr>
+        <tr><td>Angi Leads</td><td>$8,792.75</td></tr>
+        <tr><td>Home Concepts</td><td>$7,407.00</td></tr>
+        <tr><td>Thumbtack</td><td>$6,728.30</td></tr>
+        <tr><td>Homebase (The HomeMag)</td><td>$3,710.00</td></tr>
+        <tr><td>Facebook / Meta Ads</td><td>$3,022.56</td></tr>
+        <tr><td>SEO (Backlinks)</td><td>$2,598.94</td></tr>
+        <tr><td>Velocity Marketing (Sacramento Dry Rot)</td><td>$500.00</td></tr>
+        <tr><td>BBB</td><td>$51.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-subcontractors">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Subcontractors <span class="chevron">▼</span></h3>
+      <span class="sec-total">$7,831.00</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Loona Agency</td><td>$6,100.00</td></tr>
+        <tr><td>Adhead Digital</td><td>$1,705.00</td></tr>
+        <tr><td>Diana Hurina</td><td>$26.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-payroll">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Payroll <span class="chevron">▼</span></h3>
+      <span class="sec-total">$7,981.58</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Tim Li</td><td>$5,000.00</td></tr>
+        <tr><td>Vladyslava Kuznietsova</td><td>$2,981.58</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-soft">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Soft <span class="chevron">▼</span></h3>
+      <span class="sec-total">$1,104.03</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Google Workspace</td><td>$311.06</td></tr>
+        <tr><td>CallRail</td><td>$246.15</td></tr>
+        <tr><td>ClickUp</td><td>$220.00</td></tr>
+        <tr><td>OptiSigns</td><td>$120.00</td></tr>
+        <tr><td>HighLevel</td><td>$97.00</td></tr>
+        <tr><td>GoDaddy</td><td>$77.97</td></tr>
+        <tr><td>Google (misc)</td><td>$19.86</td></tr>
+        <tr><td>MetaPay</td><td>$11.99</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-gifts">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Gifts <span class="chevron">▼</span></h3>
+      <span class="sec-total">$507.95</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Safeway</td><td>$507.95</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-hiring">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Hiring <span class="chevron">▼</span></h3>
+      <span class="sec-total">$297.95</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Indeed</td><td>$297.95</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-print">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Print <span class="chevron">▼</span></h3>
+      <span class="sec-total">$92.42</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>VistaPrint</td><td>$92.42</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="conclusion">
+    <div class="conclusion-title">Monthly Summary</div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#2E75B6"></span>Performance Channels</span>
+      <span class="c-amount">$93,376.33</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#6B8CFF"></span>Non-Performance <span style="font-size:11px;color:#aaa">(Subcontractors + Soft + Gifts + Print)</span></span>
+      <span class="c-amount">$9,535.40</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#7B3F00"></span>Payroll</span>
+      <span class="c-amount">$7,981.58</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#2E86AB"></span>Hiring</span>
+      <span class="c-amount">$297.95</span>
+    </div>
+    <div class="conclusion-total">
+      <span>Total — March 2026</span>
+      <span>$111,191.26</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ APRIL ════════════════════════════ -->
+<div id="apr" class="tab-content">
+  <div class="month-header">
+    <h2>April 2026</h2>
+    <span class="month-total">$159,362.88</span>
+  </div>
+
+  <div class="cards">
+    <div class="card sec-performance"><div class="card-label">Performance Channels</div><div class="card-amount">$133,119</div></div>
+    <div class="card sec-subcontractors"><div class="card-label">Subcontractors</div><div class="card-amount">$17,480</div></div>
+    <div class="card sec-payroll"><div class="card-label">Payroll</div><div class="card-amount">$10,507</div></div>
+    <div class="card sec-soft"><div class="card-label">Soft</div><div class="card-amount">$2</div></div>
+    <div class="card sec-hiring"><div class="card-label">Hiring</div><div class="card-amount">$249</div></div>
+    <div class="card" style="--accent:#888;"><div class="card-label">Refund</div><div class="card-amount" style="color:#c00;">-$1,995</div></div>
+  </div>
+
+  <div class="section sec-performance">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Performance Channels <span class="chevron">▼</span></h3>
+      <span class="sec-total">$133,119.40</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Google Ads</td><td>$39,901.79</td></tr>
+        <tr><td>GrowMail</td><td>$35,198.22</td></tr>
+        <tr><td>Yelp</td><td>$18,738.25</td></tr>
+        <tr><td>Angi Leads</td><td>$17,686.63</td></tr>
+        <tr><td>Thumbtack</td><td>$6,287.23</td></tr>
+        <tr><td>Home Concepts</td><td>$3,986.00</td></tr>
+        <tr><td>The HomeMag</td><td>$3,710.00</td></tr>
+        <tr><td>Facebook / Meta Ads</td><td>$3,013.43</td></tr>
+        <tr><td>The Club at Westpark (Magazine)</td><td>$525.00</td></tr>
+        <tr><td>Velocity Marketing (Sacramento Dry Rot)</td><td>$500.00</td></tr>
+        <tr><td>Microsoft Ads</td><td>$200.00</td></tr>
+        <tr><td>SEO (Backlinks)</td><td>$3,361.85</td></tr>
+        <tr><td>BBB</td><td>$51.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-subcontractors">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Subcontractors <span class="chevron">▼</span></h3>
+      <span class="sec-total">$17,480.00</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Ride The Wave</td><td>$8,280.00</td></tr>
+        <tr><td>Loona Agency</td><td>$6,100.00</td></tr>
+        <tr><td>Adhead Digital</td><td>$3,100.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-payroll">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Payroll <span class="chevron">▼</span></h3>
+      <span class="sec-total">$10,507.40</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Tim Li</td><td>$7,000.00</td></tr>
+        <tr><td>Vladyslava Kuznietsova</td><td>$3,507.40</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-soft">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Soft <span class="chevron">▼</span></h3>
+      <span class="sec-total">$1.99</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Google (misc)</td><td>$1.99</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-hiring">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Hiring <span class="chevron">▼</span></h3>
+      <span class="sec-total">$249.09</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Indeed</td><td>$249.09</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section" style="--accent:#888;">
+    <div class="section-header" onclick="toggleSection(this)" style="background:#888;">
+      <h3>Refunds <span class="chevron">▼</span></h3>
+      <span class="sec-total">-$1,995.00</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Realtop LLC (refund)</td><td style="color:#c00;">-$1,995.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="conclusion">
+    <div class="conclusion-title">Monthly Summary</div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#2E75B6"></span>Performance Channels</span>
+      <span class="c-amount">$133,119.40</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#6B8CFF"></span>Non-Performance <span style="font-size:11px;color:#aaa">(Subcontractors + Soft)</span></span>
+      <span class="c-amount">$17,481.99</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#7B3F00"></span>Payroll</span>
+      <span class="c-amount">$10,507.40</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#2E86AB"></span>Hiring</span>
+      <span class="c-amount">$249.09</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#888"></span>Refunds</span>
+      <span class="c-amount" style="color:#c00;">-$1,995.00</span>
+    </div>
+    <div class="conclusion-total">
+      <span>Total — April 2026</span>
+      <span>$159,362.88</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ MAY ════════════════════════════ -->
+<div id="may" class="tab-content">
+  <div class="month-header">
+    <h2>May 2026</h2>
+    <span class="month-total">$182,719.68</span>
+  </div>
+
+  <div class="cards">
+    <div class="card sec-performance"><div class="card-label">Performance Channels</div><div class="card-amount">$150,828</div></div>
+    <div class="card sec-subcontractors"><div class="card-label">Subcontractors</div><div class="card-amount">$10,571</div></div>
+    <div class="card sec-payroll"><div class="card-label">Payroll</div><div class="card-amount">$18,035</div></div>
+    <div class="card sec-gifts"><div class="card-label">Gifts</div><div class="card-amount">$161</div></div>
+    <div class="card sec-print"><div class="card-label">Print</div><div class="card-amount">$3,124</div></div>
+  </div>
+
+  <div class="section sec-performance">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Performance Channels <span class="chevron">▼</span></h3>
+      <span class="sec-total">$150,828.29</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Google Ads</td><td>$83,917.65</td></tr>
+        <tr><td>GrowMail</td><td>$18,869.57</td></tr>
+        <tr><td>Facebook / Meta Ads</td><td>$17,139.04</td></tr>
+        <tr><td>Thumbtack</td><td>$8,978.43</td></tr>
+        <tr><td>Home Concepts</td><td>$6,975.00</td></tr>
+        <tr><td>Angi Leads</td><td>$6,624.17</td></tr>
+        <tr><td>The HomeMag Silicon Valley</td><td>$3,710.00</td></tr>
+        <tr><td>Microsoft Ads</td><td>$2,000.00</td></tr>
+        <tr><td>SEO (Backlinks)</td><td>$1,700.00</td></tr>
+        <tr><td>TikTok Ads</td><td>$863.43</td></tr>
+        <tr><td>BBB</td><td>$51.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-subcontractors">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Subcontractors <span class="chevron">▼</span></h3>
+      <span class="sec-total">$10,571.00</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Loona Agency</td><td>$6,100.00</td></tr>
+        <tr><td>Adhead Digital</td><td>$4,471.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-payroll">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Payroll <span class="chevron">▼</span></h3>
+      <span class="sec-total">$18,034.90</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Tim Li</td><td>$7,000.00</td></tr>
+        <tr><td>Vladyslava Kuznietsova</td><td>$3,958.66</td></tr>
+        <tr><td>Sofiia Ziuzin</td><td>$3,938.24</td></tr>
+        <tr><td>Oleksandr Batezhenko</td><td>$1,638.00</td></tr>
+        <tr><td>Rocket Net Profit (Vitalii)</td><td>$1,500.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-gifts">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Gifts <span class="chevron">▼</span></h3>
+      <span class="sec-total">$161.46</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Winners</td><td>$161.46</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-print">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Print <span class="chevron">▼</span></h3>
+      <span class="sec-total">$3,124.03</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Got Merch</td><td>$1,315.01</td></tr>
+        <tr><td>BoltPrinting</td><td>$992.50</td></tr>
+        <tr><td>VistaPrint</td><td>$816.52</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="conclusion">
+    <div class="conclusion-title">Monthly Summary</div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#2E75B6"></span>Performance Channels</span>
+      <span class="c-amount">$150,828.29</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#6B8CFF"></span>Non-Performance <span style="font-size:11px;color:#aaa">(Subcontractors + Gifts + Print)</span></span>
+      <span class="c-amount">$13,856.49</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#7B3F00"></span>Payroll</span>
+      <span class="c-amount">$18,034.90</span>
+    </div>
+    <div class="conclusion-total">
+      <span>Total — May 2026</span>
+      <span>$182,719.68</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ JUNE ════════════════════════════ -->
+<div id="jun" class="tab-content">
+  <div class="month-header">
+    <h2>June 2026</h2>
+    <span class="month-total">$208,270.32</span>
+  </div>
+
+  <div class="cards">
+    <div class="card sec-performance"><div class="card-label">Performance Channels</div><div class="card-amount">$173,582</div></div>
+    <div class="card sec-subcontractors"><div class="card-label">Subcontractors</div><div class="card-amount">$14,638</div></div>
+    <div class="card sec-payroll"><div class="card-label">Payroll</div><div class="card-amount">$13,657</div></div>
+    <div class="card sec-gifts"><div class="card-label">Gifts</div><div class="card-amount">$259</div></div>
+    <div class="card sec-print"><div class="card-label">Print</div><div class="card-amount">$6,135</div></div>
+  </div>
+
+  <div class="section sec-performance">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Performance Channels <span class="chevron">▼</span></h3>
+      <span class="sec-total">$173,582.24</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Google Ads</td><td>$102,712.31</td></tr>
+        <tr><td>Yelp</td><td>$20,243.43</td></tr>
+        <tr><td>Facebook / Meta Ads</td><td>$12,010.80</td></tr>
+        <tr><td>Angi Leads</td><td>$11,918.10</td></tr>
+        <tr><td>Thumbtack</td><td>$9,882.96</td></tr>
+        <tr><td>Home Concepts</td><td>$8,688.98</td></tr>
+        <tr><td>The HomeMag Sacramento</td><td>$3,710.00</td></tr>
+        <tr><td>HomeConcepts</td><td>$1,567.66</td></tr>
+        <tr><td>SEO (Backlinks)</td><td>$1,790.00</td></tr>
+        <tr><td>PixelPerfect</td><td>$500.00</td></tr>
+        <tr><td>Microsoft Ads</td><td>$500.00</td></tr>
+        <tr><td>BBB</td><td>$58.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-subcontractors">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Subcontractors <span class="chevron">▼</span></h3>
+      <span class="sec-total">$14,638.00</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Loona Agency</td><td>$6,100.00</td></tr>
+        <tr><td>Lee Agency</td><td>$4,500.00</td></tr>
+        <tr><td>Adhead Digital</td><td>$4,038.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-payroll">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Payroll <span class="chevron">▼</span></h3>
+      <span class="sec-total">$13,656.95</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Tim Li</td><td>$5,250.00</td></tr>
+        <tr><td>Sofiia Ziuzin</td><td>$3,726.95</td></tr>
+        <tr><td>Rocket Net Profit (Vitalii)</td><td>$3,000.00</td></tr>
+        <tr><td>Oleksandr Batezhenko</td><td>$1,680.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-gifts">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Gifts <span class="chevron">▼</span></h3>
+      <span class="sec-total">$258.63</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Winners</td><td>$258.63</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-print">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Print <span class="chevron">▼</span></h3>
+      <span class="sec-total">$6,134.50</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>VistaPrint</td><td>$5,569.70</td></tr>
+        <tr><td>UPrinting</td><td>$564.80</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="conclusion">
+    <div class="conclusion-title">Monthly Summary</div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#2E75B6"></span>Performance Channels</span>
+      <span class="c-amount">$173,582.24</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#6B8CFF"></span>Non-Performance <span style="font-size:11px;color:#aaa">(Subcontractors + Gifts + Print)</span></span>
+      <span class="c-amount">$21,031.13</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#7B3F00"></span>Payroll</span>
+      <span class="c-amount">$13,656.95</span>
+    </div>
+    <div class="conclusion-total">
+      <span>Total — June 2026</span>
+      <span>$208,270.32</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ JULY ════════════════════════════ -->
+<div id="jul" class="tab-content">
+  <div class="month-header">
+    <h2>July 2026</h2>
+    <span class="month-total">$226,208.21 <span style="font-size:14px;color:#aaa;">($303,086.39 gross)</span></span>
+  </div>
+
+  <div class="cards">
+    <div class="card sec-performance"><div class="card-label">Performance Channels</div><div class="card-amount">$184,399</div></div>
+    <div class="card sec-subcontractors"><div class="card-label">Subcontractors</div><div class="card-amount">$17,859</div></div>
+    <div class="card sec-payroll"><div class="card-label">Payroll</div><div class="card-amount">$23,551</div></div>
+    <div class="card sec-print"><div class="card-label">Misc</div><div class="card-amount">$399</div></div>
+    <div class="card" style="--accent:#C05B2A;"><div class="card-label">→ August</div><div class="card-amount">$57,448</div></div>
+    <div class="card" style="--accent:#A84B9B;"><div class="card-label">→ June</div><div class="card-amount">$19,950</div></div>
+  </div>
+
+  <div class="section sec-performance">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Performance Channels <span class="chevron">▼</span></h3>
+      <span class="sec-total">$184,399.10</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Google Ads</td><td>$97,195.08</td></tr>
+        <tr><td>Facebook / Meta Ads</td><td>$26,251.16</td></tr>
+        <tr><td>Yelp (½ July)</td><td>$19,950.00</td></tr>
+        <tr><td>Angi Leads</td><td>$12,788.78</td></tr>
+        <tr><td>Thumbtack</td><td>$11,013.01</td></tr>
+        <tr><td>Home Concepts</td><td>$8,022.66</td></tr>
+        <tr><td>The HomeMag Sacramento</td><td>$3,710.00</td></tr>
+        <tr><td>SEO (Backlinks)</td><td>$1,500.00</td></tr>
+        <tr><td>TikTok Ads</td><td>$1,308.41</td></tr>
+        <tr><td>Microsoft Ads</td><td>$1,250.00</td></tr>
+        <tr><td>PixelPerfect</td><td>$1,250.00</td></tr>
+        <tr><td>BBB</td><td>$160.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-subcontractors">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Subcontractors <span class="chevron">▼</span></h3>
+      <span class="sec-total">$17,859.25</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Adhead Digital</td><td>$7,411.25</td></tr>
+        <tr><td>Loona Agency</td><td>$6,100.00</td></tr>
+        <tr><td>AstraPixel</td><td>$2,500.00</td></tr>
+        <tr><td>FZCO</td><td>$1,597.00</td></tr>
+        <tr><td>PixelPerfect (remainder)</td><td>$251.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-payroll">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h3>Payroll <span class="chevron">▼</span></h3>
+      <span class="sec-total">$23,550.55</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Tim Li</td><td>$8,000.00</td></tr>
+        <tr><td>Vitalii Soloviov</td><td>$7,500.00</td></tr>
+        <tr><td>Sofiia Ziuzin</td><td>$4,857.55</td></tr>
+        <tr><td>Oleksandr Batezhenko</td><td>$3,193.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section sec-print">
+    <div class="section-header" onclick="toggleSection(this)" style="background:#7A7A7A;">
+      <h3>Misc <span class="chevron">▼</span></h3>
+      <span class="sec-total">$399.31</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Winners</td><td>$227.24</td></tr>
+        <tr><td>VistaPrint</td><td>$143.72</td></tr>
+        <tr><td>Fiverr</td><td>$24.60</td></tr>
+        <tr><td>Etsy</td><td>$3.75</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section" style="--accent:#888;">
+    <div class="section-header" onclick="toggleSection(this)" style="background:#888;">
+      <h3>Transferred to Other Months <span class="chevron">▼</span></h3>
+      <span class="sec-total">$77,398.18</span>
+    </div>
+    <table>
+      <thead><tr><th>Vendor</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>GrowMail → August</td><td>$57,448.18</td></tr>
+        <tr><td>Yelp ½ → June</td><td>$19,950.00</td></tr>
+        <tr><td>Indeed (removed)</td><td style="color:#c00;">-$520.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="conclusion">
+    <div class="conclusion-title">Monthly Summary</div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#2E75B6"></span>Performance Channels</span>
+      <span class="c-amount">$184,399.10</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#6B8CFF"></span>Non-Performance <span style="font-size:11px;color:#aaa">(Subcontractors + Misc)</span></span>
+      <span class="c-amount">$18,258.56</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#7B3F00"></span>Payroll</span>
+      <span class="c-amount">$23,550.55</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#888"></span>Transferred (GrowMail Aug + Yelp ½ Jun)</span>
+      <span class="c-amount">$77,398.18</span>
+    </div>
+    <div class="conclusion-row">
+      <span class="c-label"><span class="c-dot" style="background:#c00"></span>Indeed (removed)</span>
+      <span class="c-amount" style="color:#c00;">-$520.00</span>
+    </div>
+    <div class="conclusion-total">
+      <span>Total — July 2026 (gross)</span>
+      <span>$303,086.39</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+  function toggleSection(header) {
+    const table = header.parentElement.querySelector('table');
+    if (table) {
+      const hidden = table.style.display === 'none';
+      table.style.display = hidden ? '' : 'none';
+      header.classList.toggle('collapsed', !hidden);
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0060)file:///Users/macbook/Downloads/Marketing_Report_2026_5.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marketing Report 2026</title>
 <style>
@@ -69,156 +69,461 @@
 </header>
 
 <div class="tabs-bar">
-  <button class="tab-btn active" onclick="showTab('summary', this)">Summary</button>
-  <button class="tab-btn" onclick="showTab('performance', this)">Plan vs Fact</button>
-  <button class="tab-btn" onclick="showTab('jan', this)">January</button>
-  <button class="tab-btn" onclick="showTab('feb', this)">February</button>
-  <button class="tab-btn" onclick="showTab('mar', this)">March</button>
-  <button class="tab-btn" onclick="showTab('apr', this)">April</button>
-  <button class="tab-btn" onclick="showTab('may', this)">May</button>
-  <button class="tab-btn" onclick="showTab('jun', this)">June</button>
-  <button class="tab-btn" onclick="showTab('jul', this)">July</button>
+  <button class="tab-btn active" onclick="showTab(&#39;summary&#39;, this)">Summary</button>
+  <button class="tab-btn" onclick="showTab(&#39;performance&#39;, this)">Plan vs Fact</button>
+  <button class="tab-btn" onclick="showTab(&#39;jan&#39;, this)">January</button>
+  <button class="tab-btn" onclick="showTab(&#39;feb&#39;, this)">February</button>
+  <button class="tab-btn" onclick="showTab(&#39;mar&#39;, this)">March</button>
+  <button class="tab-btn" onclick="showTab(&#39;apr&#39;, this)">April</button>
+  <button class="tab-btn" onclick="showTab(&#39;may&#39;, this)">May</button>
+  <button class="tab-btn" onclick="showTab(&#39;jun&#39;, this)">June</button>
+  <button class="tab-btn" onclick="showTab(&#39;jul&#39;, this)">July</button>
 </div>
 
 <!-- ═══════════════════════════ JANUARY ═══════════════════════════ -->
 <!-- ═══════════════════════════ PLAN VS FACT ════════════════════════════ -->
 <div id="performance" class="tab-content">
   <div class="month-header">
-    <h2>Plan vs Fact — 2026</h2>
-    <span class="month-total">January — July</span>
+    <h2>Full Funnel — Plan vs Fact</h2>
+    <span class="month-total">January — July 2026</span>
   </div>
 
 <style>
-.pvf-wrap { overflow-x: auto; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
-.pvf-table { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 1000px; }
-.pvf-table th { padding: 8px 10px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #fff; text-align: right; white-space: nowrap; }
-.pvf-table th:first-child { text-align: left; min-width: 80px; }
-.pvf-table td { padding: 9px 10px; border-bottom: 1px solid #F0F2F5; text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; background:#fff; }
-.pvf-table td:first-child { text-align: left; font-weight: 600; color: #1a1a2e; }
-.pvf-table tr:hover td { background: #FAFBFF; }
-.pvf-table tr.ytd-row td { background: #1a1a2e !important; color: #fff; font-weight: 700; border-bottom: none; border-top: 2px solid #1a1a2e; }
-.pvf-table tr.ytd-row td:first-child { color: #6B8CFF; }
-.pct-green  { color: #1D9E75; font-weight: 700; }
-.pct-orange { color: #E67E22; font-weight: 700; }
-.pct-red    { color: #C0392B; font-weight: 700; }
-.val-dim    { color: #888; }
-.val-bold   { font-weight: 700; color: #1a1a2e; }
-.grp-th-budget { background: #2E75B6 !important; }
-.grp-th-perf   { background: #375623 !important; }
-.grp-th-non    { background: #7B3F00 !important; }
-.grp-th-total  { background: #5C5C8A !important; }
-.grp-th-extra  { background: #1a1a2e !important; }
+.pvf-wrap { overflow-x: auto; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,.06); margin-bottom: 24px; }
+.pvf-tbl  { width: 100%; border-collapse: collapse; font-size: 12px; background:#fff; }
+.pvf-tbl th { padding: 8px 10px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing:.05em; color:#fff; text-align:right; white-space:nowrap; }
+.pvf-tbl th.left { text-align:left; min-width:80px; }
+.pvf-tbl td { padding: 9px 10px; border-bottom:1px solid #F0F2F5; text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.pvf-tbl td.left { text-align:left; font-weight:600; color:#1a1a2e; }
+.pvf-tbl tr:hover td { background:#FAFBFF; }
+.pvf-tbl tr.ytd td { background:#1a1a2e !important; color:#fff; font-weight:700; }
+.pvf-tbl tr.ytd td.left { color:#6B8CFF; }
+.g{color:#1D9E75;font-weight:700;} .o{color:#E67E22;font-weight:700;} .r{color:#C0392B;font-weight:700;}
+.dim{color:#aaa;} .b{font-weight:700;color:#1a1a2e;} .cum{color:#888;font-style:italic;}
+.h-dark{background:#1a1a2e!important;} .h-leads{background:#2E75B6!important;} .h-est{background:#375623!important;}
+.h-eval{background:#7B3F00!important;} .h-jobs{background:#5C5C8A!important;} .h-rev{background:#1D5C4A!important;} .h-mkt{background:#4A2E6B!important;}
+.tbl-label { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:#888; margin:24px 0 8px; }
+/* month detail */
+.month-detail { background:#fff; border-radius:12px; margin-bottom:14px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,.06); }
+.month-detail-hdr { background:#1a1a2e; padding:12px 20px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; }
+.month-detail-hdr h3 { color:#fff; font-size:14px; font-weight:700; margin:0; }
+.month-detail-hdr span { color:#6B8CFF; font-size:13px; font-weight:600; }
+.month-detail-body { display:none; }
+.month-detail-body.open { display:block; }
+.detail-section { border-bottom:1px solid #F0F2F5; }
+.detail-section:last-child { border-bottom:none; }
+.detail-section-hdr { padding:8px 20px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:#fff; }
+.detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:0; }
+.detail-item { padding:10px 20px; border-right:1px solid #F0F2F5; border-bottom:1px solid #F0F2F5; }
+.detail-item:nth-child(even) { border-right:none; }
+.detail-label { font-size:10px; color:#888; text-transform:uppercase; letter-spacing:.06em; margin-bottom:4px; }
+.detail-vals { display:flex; gap:12px; align-items:baseline; flex-wrap:wrap; }
+.detail-plan { font-size:13px; color:#aaa; }
+.detail-fact { font-size:18px; font-weight:700; }
+.detail-pct  { font-size:12px; font-weight:600; }
 </style>
 
+<!-- ══ TABLE 1: MARKETING BUDGET ══ -->
+<div class="tbl-label">Marketing Budget</div>
 <div class="pvf-wrap">
-<table class="pvf-table">
+<table class="pvf-tbl" style="min-width:820px;">
   <thead>
     <tr>
-      <th style="background:#1a1a2e; text-align:left;">Month</th>
-      <th class="grp-th-budget">Plan Budget</th>
-      <th class="grp-th-budget">% Sales Plan</th>
-      <th class="grp-th-perf">Perf Fact</th>
-      <th class="grp-th-perf">% Sales Plan</th>
-      <th class="grp-th-non">Non-Perf</th>
-      <th class="grp-th-non">% Sales Plan</th>
-      <th class="grp-th-total">Total Mkt</th>
-      <th class="grp-th-total">% Sales Plan</th>
-      <th class="grp-th-extra">% Mkt Plan</th>
-      <th class="grp-th-extra">% Fact Sales</th>
+      <th class="left h-dark">Month</th>
+      <th class="h-mkt">Budget Plan</th>
+      <th class="h-mkt">% Sales Plan</th>
+      <th class="h-mkt">Perf Fact</th>
+      <th class="h-mkt">% Sales Plan</th>
+      <th class="h-mkt">Non-Perf</th>
+      <th class="h-mkt">% Sales Plan</th>
+      <th class="h-mkt">Total Mkt</th>
+      <th class="h-mkt">% Sales Plan</th>
+      <th class="h-mkt">% Mkt Plan</th>
+      <th class="h-mkt">% Fact Sales</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="left">January</td><td class="dim">$74.7K</td><td class="dim">10.7%</td><td class="b">$96.6K</td><td class="r">13.8%</td><td class="b">$26.2K</td><td class="r">3.7%</td><td class="b">$122.8K</td><td class="r">17.5%</td><td class="r">129%</td><td class="r">19.2%</td></tr>
+    <tr><td class="left">February</td><td class="dim">$65.3K</td><td class="dim">10.7%</td><td class="b">$71.8K</td><td class="o">11.7%</td><td class="b">$14.6K</td><td class="g">2.4%</td><td class="b">$86.4K</td><td class="o">14.1%</td><td class="o">110%</td><td class="g">9.1%</td></tr>
+    <tr><td class="left">March</td><td class="dim">$158.7K</td><td class="dim">10.6%</td><td class="b">$93.4K</td><td class="g">6.2%</td><td class="b">$9.5K</td><td class="g">0.6%</td><td class="b">$102.9K</td><td class="g">6.9%</td><td class="g">59%</td><td class="g">7.4%</td></tr>
+    <tr><td class="left">April</td><td class="dim">$84.0K</td><td class="dim">10.7%</td><td class="b">$133.1K</td><td class="r">16.9%</td><td class="b">$17.5K</td><td class="o">2.2%</td><td class="b">$150.6K</td><td class="r">19.1%</td><td class="r">158%</td><td class="o">13.7%</td></tr>
+    <tr><td class="left">May</td><td class="dim">$214.7K</td><td class="dim">10.7%</td><td class="b">$171.1K</td><td class="g">8.6%</td><td class="b">$13.9K</td><td class="g">0.7%</td><td class="b">$184.9K</td><td class="g">9.2%</td><td class="g">80%</td><td class="o">14.2%</td></tr>
+    <tr><td class="left">June</td><td class="dim">$168.0K</td><td class="dim">10.5%</td><td class="b">$173.3K</td><td class="o">10.8%</td><td class="b">$21.0K</td><td class="o">1.3%</td><td class="b">$194.3K</td><td class="o">12.1%</td><td class="o">103%</td><td class="r">17.7%</td></tr>
+    <tr><td class="left">July</td><td class="dim">$168.0K</td><td class="dim">10.5%</td><td class="b">$164.4K</td><td class="o">10.3%</td><td class="b">$18.3K</td><td class="o">1.1%</td><td class="b">$182.7K</td><td class="o">11.4%</td><td class="g">98%</td><td class="o">9.6%</td></tr>
+    <tr class="ytd"><td class="left">YTD</td><td>$933.4K</td><td style="color:#aaa;">10.6%</td><td>$903.7K</td><td style="color:#6B8CFF;">10.3%</td><td>$120.9K</td><td style="color:#6B8CFF;">1.4%</td><td>$1,024.6K</td><td style="color:#6B8CFF;">11.6%</td><td style="color:#E67E22;">97%</td><td style="color:#6B8CFF;">12.2%</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ══ TABLE 2: FULL FUNNEL ══ -->
+<div class="tbl-label">Full Funnel</div>
+<div class="pvf-wrap">
+<table class="pvf-tbl" style="min-width:1100px;">
+  <thead>
+    <tr>
+      <th class="left h-dark" rowspan="2">Month</th>
+      <th colspan="4" class="h-leads">Qualified Leads</th>
+      <th colspan="4" class="h-est">Estimates</th>
+      <th colspan="4" class="h-eval">Estimate Value</th>
+      <th colspan="4" class="h-jobs">Jobs</th>
+      <th colspan="5" class="h-rev">Revenue</th>
+    </tr>
+    <tr>
+      <th class="h-leads">Plan</th><th class="h-leads">Fact</th><th class="h-leads">Cum Plan</th><th class="h-leads">Cum Fact</th>
+      <th class="h-est">Plan</th><th class="h-est">Fact</th><th class="h-est">Cum Plan</th><th class="h-est">Cum Fact</th>
+      <th class="h-eval">Plan</th><th class="h-eval">Fact</th><th class="h-eval">Cum Plan</th><th class="h-eval">Cum Fact</th>
+      <th class="h-jobs">Plan</th><th class="h-jobs">Closed</th><th class="h-jobs">Cum Plan</th><th class="h-jobs">Cum Closed</th>
+      <th class="h-rev">Plan</th><th class="h-rev">Closed</th><th class="h-rev">Cum Plan</th><th class="h-rev">Cum Closed</th><th class="h-rev">%</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>January</td>
-      <td class="val-dim">$74.7K</td><td class="val-dim">10.7%</td>
-      <td class="val-bold">$96.6K</td><td class="pct-red">13.8%</td>
-      <td class="val-bold">$26.2K</td><td class="pct-red">3.7%</td>
-      <td class="val-bold">$122.8K</td><td class="pct-red">17.5%</td>
-      <td class="pct-red">164%</td><td class="pct-red">19.2%</td>
+      <td class="left">January</td>
+      <td class="dim">149</td><td class="g">208</td><td class="dim">149</td><td class="g">208</td>
+      <td class="dim">112</td><td class="g">181</td><td class="dim">112</td><td class="g">181</td>
+      <td class="dim">$3.4M</td><td class="g">$5.2M</td><td class="dim">$3.4M</td><td class="g">$5.2M</td>
+      <td class="dim">28</td><td class="g">36</td><td class="dim">28</td><td class="g">36</td>
+      <td class="dim">$700K</td><td class="o">$639K</td><td class="dim">$700K</td><td class="o">$639K</td><td class="o">91%</td>
     </tr>
     <tr>
-      <td>February</td>
-      <td class="val-dim">$65.3K</td><td class="val-dim">10.7%</td>
-      <td class="val-bold">$71.8K</td><td class="pct-orange">11.7%</td>
-      <td class="val-bold">$14.6K</td><td class="pct-green">2.4%</td>
-      <td class="val-bold">$86.4K</td><td class="pct-orange">14.1%</td>
-      <td class="pct-orange">132%</td><td class="pct-green">9.1%</td>
+      <td class="left">February</td>
+      <td class="dim">131</td><td class="g">191</td><td class="dim">280</td><td class="g">399</td>
+      <td class="dim">98</td><td class="g">157</td><td class="dim">210</td><td class="g">338</td>
+      <td class="dim">$2.9M</td><td class="g">$4.2M</td><td class="dim">$6.3M</td><td class="g">$9.4M</td>
+      <td class="dim">25</td><td class="g">47</td><td class="dim">53</td><td class="g">83</td>
+      <td class="dim">$612.5K</td><td class="g">$947.3K</td><td class="dim">$1.3M</td><td class="g">$1.6M</td><td class="g">155%</td>
     </tr>
     <tr>
-      <td>March</td>
-      <td class="val-dim">$158.7K</td><td class="val-dim">10.6%</td>
-      <td class="val-bold">$93.4K</td><td class="pct-green">6.2%</td>
-      <td class="val-bold">$9.5K</td><td class="pct-green">0.6%</td>
-      <td class="val-bold">$102.9K</td><td class="pct-green">6.9%</td>
-      <td class="pct-green">65%</td><td class="pct-green">7.4%</td>
+      <td class="left">March</td>
+      <td class="dim">317</td><td class="r">258</td><td class="dim">597</td><td class="g">657</td>
+      <td class="dim">238</td><td class="r">201</td><td class="dim">448</td><td class="g">539</td>
+      <td class="dim">$7.1M</td><td class="r">$5.5M</td><td class="dim">$13.4M</td><td class="g">$14.9M</td>
+      <td class="dim">60</td><td class="o">52</td><td class="dim">113</td><td class="g">135</td>
+      <td class="dim">$1.50M</td><td class="o">$1.40M</td><td class="dim">$2.8M</td><td class="g">$3.0M</td><td class="o">93%</td>
     </tr>
     <tr>
-      <td>April</td>
-      <td class="val-dim">$84.0K</td><td class="val-dim">10.7%</td>
-      <td class="val-bold">$133.1K</td><td class="pct-red">16.9%</td>
-      <td class="val-bold">$17.5K</td><td class="pct-orange">2.2%</td>
-      <td class="val-bold">$150.6K</td><td class="pct-red">19.1%</td>
-      <td class="pct-red">179%</td><td class="pct-orange">13.7%</td>
+      <td class="left">April</td>
+      <td class="dim">168</td><td class="g">230</td><td class="dim">765</td><td class="g">887</td>
+      <td class="dim">126</td><td class="g">184</td><td class="dim">574</td><td class="g">723</td>
+      <td class="dim">$3.8M</td><td class="g">$6.0M</td><td class="dim">$17.2M</td><td class="g">$20.9M</td>
+      <td class="dim">32</td><td class="g">38</td><td class="dim">145</td><td class="g">173</td>
+      <td class="dim">$787.5K</td><td class="g">$1.10M</td><td class="dim">$3.6M</td><td class="g">$4.1M</td><td class="g">140%</td>
     </tr>
     <tr>
-      <td>May</td>
-      <td class="val-dim">$214.7K</td><td class="val-dim">10.7%</td>
-      <td class="val-bold">$150.8K</td><td class="pct-green">7.5%</td>
-      <td class="val-bold">$13.9K</td><td class="pct-green">0.7%</td>
-      <td class="val-bold">$164.7K</td><td class="pct-green">8.2%</td>
-      <td class="pct-green">77%</td><td class="pct-orange">12.7%</td>
+      <td class="left">May</td>
+      <td class="dim">429</td><td class="r">281</td><td class="dim">1,194</td><td class="o">1,168</td>
+      <td class="dim">322</td><td class="r">242</td><td class="dim">896</td><td class="o">965</td>
+      <td class="dim">$9.7M</td><td class="o">$8.3M</td><td class="dim">$26.9M</td><td class="o">$29.2M</td>
+      <td class="dim">81</td><td class="r">37</td><td class="dim">226</td><td class="o">210</td>
+      <td class="dim">$2.00M</td><td class="r">$1.30M</td><td class="dim">$5.6M</td><td class="o">$5.4M</td><td class="r">65%</td>
     </tr>
     <tr>
-      <td>June</td>
-      <td class="val-dim">$168.0K</td><td class="val-dim">10.5%</td>
-      <td class="val-bold">$173.6K</td><td class="pct-orange">10.8%</td>
-      <td class="val-bold">$21.0K</td><td class="pct-orange">1.3%</td>
-      <td class="val-bold">$194.6K</td><td class="pct-orange">12.2%</td>
-      <td class="pct-orange">116%</td><td class="pct-red">17.7%</td>
+      <td class="left">June</td>
+      <td class="dim">336</td><td class="o">329</td><td class="dim">1,530</td><td class="o">1,497</td>
+      <td class="dim">252</td><td class="g">298</td><td class="dim">1,148</td><td class="o">1,263</td>
+      <td class="dim">$7.6M</td><td class="g">$8.5M</td><td class="dim">$34.5M</td><td class="o">$37.7M</td>
+      <td class="dim">63</td><td class="r">52</td><td class="dim">289</td><td class="o">262</td>
+      <td class="dim">$1.60M</td><td class="r">$1.10M</td><td class="dim">$7.2M</td><td class="o">$6.5M</td><td class="r">69%</td>
     </tr>
     <tr>
-      <td>July</td>
-      <td class="val-dim">$168.0K</td><td class="val-dim">10.5%</td>
-      <td class="val-bold">$184.4K</td><td class="pct-orange">11.5%</td>
-      <td class="val-bold">$18.3K</td><td class="pct-orange">1.1%</td>
-      <td class="val-bold">$202.7K</td><td class="pct-orange">12.7%</td>
-      <td class="pct-orange">121%</td><td class="pct-orange">10.7%</td>
+      <td class="left">July</td>
+      <td class="dim">336</td><td class="g">357</td><td class="dim">1,866</td><td class="o">1,854</td>
+      <td class="dim">252</td><td class="g">295</td><td class="dim">1,400</td><td class="g">1,558</td>
+      <td class="dim">$7.6M</td><td class="g">$8.5M</td><td class="dim">$42.1M</td><td class="g">$46.2M</td>
+      <td class="dim">63</td><td class="g">73</td><td class="dim">352</td><td class="o">335</td>
+      <td class="dim">$1.60M</td><td class="g">$1.90M</td><td class="dim">$8.8M</td><td class="o">$8.4M</td><td class="g">119%</td>
     </tr>
-    <tr class="ytd-row">
-      <td>YTD</td>
-      <td>$933.4K</td><td style="color:#aaa;">10.6%</td>
-      <td>$903.7K</td><td style="color:#6B8CFF;">10.3%</td>
-      <td>$120.9K</td><td style="color:#6B8CFF;">1.4%</td>
-      <td>$1,024.6K</td><td style="color:#6B8CFF;">11.6%</td>
-      <td style="color:#E67E22;">110%</td><td style="color:#6B8CFF;">12.2%</td>
+    <tr class="ytd">
+      <td class="left">YTD</td>
+      <td>1,866</td><td style="color:#E67E22;">1,854</td><td>1,866</td><td style="color:#E67E22;">1,854</td>
+      <td>1,400</td><td style="color:#E67E22;">1,558</td><td>1,400</td><td style="color:#6B8CFF;">1,558</td>
+      <td>$42.1M</td><td style="color:#6B8CFF;">$46.2M</td><td>$42.1M</td><td style="color:#6B8CFF;">$46.2M</td>
+      <td>352</td><td style="color:#E67E22;">335</td><td>352</td><td style="color:#E67E22;">335</td>
+      <td>$8.80M</td><td style="color:#E67E22;">$8.39M</td><td>$8.80M</td><td style="color:#E67E22;">$8.39M</td><td style="color:#E67E22;">95%</td>
     </tr>
   </tbody>
 </table>
 </div>
 
-<div style="margin-top:16px; display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px;">
-  <div style="background:#fff; border-radius:10px; padding:14px 16px; border-left:3px solid #2E75B6; box-shadow:0 1px 4px rgba(0,0,0,.06);">
-    <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:6px;">YTD Sales Closed</div>
-    <div style="font-size:18px;font-weight:700;">$8.39M</div>
-    <div style="font-size:12px;color:#888;">vs $8.80M plan (95%)</div>
+<!-- ══ MONTH DETAIL ══ -->
+<div class="tbl-label">Monthly Detail</div>
+<div class="month-detail">
+  <div class="month-detail-hdr" onclick="toggleDetail(&#39;jan-d&#39;)">
+    <h3>January 2026</h3><span>Total Marketing: $129,961</span>
   </div>
-  <div style="background:#fff; border-radius:10px; padding:14px 16px; border-left:3px solid #375623; box-shadow:0 1px 4px rgba(0,0,0,.06);">
-    <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:6px;">Perf Channels YTD</div>
-    <div style="font-size:18px;font-weight:700;">$903.7K</div>
-    <div style="font-size:12px;color:#888;">vs $933.4K plan (97%)</div>
+  <div class="month-detail-body" id="jan-d">
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#2E75B6">Qualified Leads</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">149</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact" style="color:#1D9E75">208</span><span class="detail-pct" style="color:#1D9E75"> 140%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#375623">Estimates</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">112</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact" style="color:#1D9E75">181</span><span class="detail-pct" style="color:#1D9E75"> 162%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#7B3F00">Estimate Value</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">$3.4M</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact">$5.2M</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#5C5C8A">Jobs</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">28</span></div></div>
+        <div class="detail-item"><div class="detail-label">Closed</div><div class="detail-vals"><span class="detail-fact" style="color:#1D9E75">36</span><span class="detail-pct" style="color:#1D9E75"> 129%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#1D5C4A">Revenue</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">$700K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Closed</div><div class="detail-vals"><span class="detail-fact" style="color:#E67E22">$639K</span><span class="detail-pct" style="color:#E67E22"> 91%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#4A2E6B">Marketing Budget</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Budget Plan</div><div class="detail-vals"><span class="detail-plan">$74.7K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Perf Channels</div><div class="detail-vals"><span class="detail-fact">$96.6K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Non-Performance</div><div class="detail-vals"><span class="detail-fact">$26.2K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Total Mkt / % Revenue</div><div class="detail-vals"><span class="detail-fact" style="color:#C0392B">$122.8K</span><span class="detail-pct" style="color:#C0392B"> 19.2%</span></div></div>
+      </div></div>
   </div>
-  <div style="background:#fff; border-radius:10px; padding:14px 16px; border-left:3px solid #7B3F00; box-shadow:0 1px 4px rgba(0,0,0,.06);">
-    <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:6px;">Non-Performance YTD</div>
-    <div style="font-size:18px;font-weight:700;">$120.9K</div>
-    <div style="font-size:12px;color:#888;">13% of Perf Plan</div>
+</div>
+<div class="month-detail">
+  <div class="month-detail-hdr" onclick="toggleDetail(&#39;feb-d&#39;)">
+    <h3>February 2026</h3><span>Total Marketing: $97,505</span>
   </div>
-  <div style="background:#fff; border-radius:10px; padding:14px 16px; border-left:3px solid #5C5C8A; box-shadow:0 1px 4px rgba(0,0,0,.06);">
-    <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:6px;">Total Mkt / Sales</div>
-    <div style="font-size:18px;font-weight:700;">11.6%</div>
-    <div style="font-size:12px;color:#888;">$1.02M of $8.39M closed</div>
+  <div class="month-detail-body" id="feb-d">
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#2E75B6">Qualified Leads</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">131</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact" style="color:#1D9E75">191</span><span class="detail-pct" style="color:#1D9E75"> 146%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#375623">Estimates</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">98</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact" style="color:#1D9E75">157</span><span class="detail-pct" style="color:#1D9E75"> 160%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#7B3F00">Estimate Value</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">$2.9M</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact">$4.2M</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#5C5C8A">Jobs</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">25</span></div></div>
+        <div class="detail-item"><div class="detail-label">Closed</div><div class="detail-vals"><span class="detail-fact" style="color:#1D9E75">47</span><span class="detail-pct" style="color:#1D9E75"> 188%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#1D5C4A">Revenue</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">$612.5K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Closed</div><div class="detail-vals"><span class="detail-fact" style="color:#1D9E75">$947.3K</span><span class="detail-pct" style="color:#1D9E75"> 155%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#4A2E6B">Marketing Budget</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Budget Plan</div><div class="detail-vals"><span class="detail-plan">$65.3K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Perf Channels</div><div class="detail-vals"><span class="detail-fact">$71.8K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Non-Performance</div><div class="detail-vals"><span class="detail-fact">$14.6K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Total Mkt / % Revenue</div><div class="detail-vals"><span class="detail-fact" style="color:#1D9E75">$86.4K</span><span class="detail-pct" style="color:#1D9E75"> 9.1%</span></div></div>
+      </div></div>
+  </div>
+</div>
+<div class="month-detail">
+  <div class="month-detail-hdr" onclick="toggleDetail(&#39;mar-d&#39;)">
+    <h3>March 2026</h3><span>Total Marketing: $111,191</span>
+  </div>
+  <div class="month-detail-body" id="mar-d">
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#2E75B6">Qualified Leads</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">317</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact" style="color:#C0392B">258</span><span class="detail-pct" style="color:#C0392B"> 81%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#375623">Estimates</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">238</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact" style="color:#C0392B">201</span><span class="detail-pct" style="color:#C0392B"> 84%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#7B3F00">Estimate Value</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">$7.1M</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact">$5.5M</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#5C5C8A">Jobs</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">60</span></div></div>
+        <div class="detail-item"><div class="detail-label">Closed</div><div class="detail-vals"><span class="detail-fact" style="color:#C0392B">52</span><span class="detail-pct" style="color:#C0392B"> 87%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#1D5C4A">Revenue</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">$1.50M</span></div></div>
+        <div class="detail-item"><div class="detail-label">Closed</div><div class="detail-vals"><span class="detail-fact" style="color:#E67E22">$1.40M</span><span class="detail-pct" style="color:#E67E22"> 93%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#4A2E6B">Marketing Budget</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Budget Plan</div><div class="detail-vals"><span class="detail-plan">$158.7K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Perf Channels</div><div class="detail-vals"><span class="detail-fact">$93.4K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Non-Performance</div><div class="detail-vals"><span class="detail-fact">$9.5K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Total Mkt / % Revenue</div><div class="detail-vals"><span class="detail-fact" style="color:#1D9E75">$102.9K</span><span class="detail-pct" style="color:#1D9E75"> 7.4%</span></div></div>
+      </div></div>
+  </div>
+</div>
+<div class="month-detail">
+  <div class="month-detail-hdr" onclick="toggleDetail(&#39;apr-d&#39;)">
+    <h3>April 2026</h3><span>Total Marketing: $159,363</span>
+  </div>
+  <div class="month-detail-body" id="apr-d">
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#2E75B6">Qualified Leads</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">168</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact" style="color:#1D9E75">230</span><span class="detail-pct" style="color:#1D9E75"> 137%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#375623">Estimates</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">126</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact" style="color:#1D9E75">184</span><span class="detail-pct" style="color:#1D9E75"> 146%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#7B3F00">Estimate Value</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">$3.8M</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact">$6.0M</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#5C5C8A">Jobs</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">32</span></div></div>
+        <div class="detail-item"><div class="detail-label">Closed</div><div class="detail-vals"><span class="detail-fact" style="color:#1D9E75">38</span><span class="detail-pct" style="color:#1D9E75"> 119%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#1D5C4A">Revenue</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">$787.5K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Closed</div><div class="detail-vals"><span class="detail-fact" style="color:#1D9E75">$1.10M</span><span class="detail-pct" style="color:#1D9E75"> 140%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#4A2E6B">Marketing Budget</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Budget Plan</div><div class="detail-vals"><span class="detail-plan">$84.0K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Perf Channels</div><div class="detail-vals"><span class="detail-fact">$133.1K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Non-Performance</div><div class="detail-vals"><span class="detail-fact">$17.5K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Total Mkt / % Revenue</div><div class="detail-vals"><span class="detail-fact" style="color:#E67E22">$150.6K</span><span class="detail-pct" style="color:#E67E22"> 13.7%</span></div></div>
+      </div></div>
+  </div>
+</div>
+<div class="month-detail">
+  <div class="month-detail-hdr" onclick="toggleDetail(&#39;may-d&#39;)">
+    <h3>May 2026</h3><span>Total Marketing: $202,963</span>
+  </div>
+  <div class="month-detail-body" id="may-d">
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#2E75B6">Qualified Leads</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">429</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact" style="color:#C0392B">281</span><span class="detail-pct" style="color:#C0392B"> 66%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#375623">Estimates</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">322</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact" style="color:#C0392B">242</span><span class="detail-pct" style="color:#C0392B"> 75%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#7B3F00">Estimate Value</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">$9.7M</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact">$8.3M</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#5C5C8A">Jobs</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">81</span></div></div>
+        <div class="detail-item"><div class="detail-label">Closed</div><div class="detail-vals"><span class="detail-fact" style="color:#C0392B">37</span><span class="detail-pct" style="color:#C0392B"> 46%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#1D5C4A">Revenue</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">$2.00M</span></div></div>
+        <div class="detail-item"><div class="detail-label">Closed</div><div class="detail-vals"><span class="detail-fact" style="color:#C0392B">$1.30M</span><span class="detail-pct" style="color:#C0392B"> 65%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#4A2E6B">Marketing Budget</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Budget Plan</div><div class="detail-vals"><span class="detail-plan">$214.7K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Perf Channels</div><div class="detail-vals"><span class="detail-fact">$171.1K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Non-Performance</div><div class="detail-vals"><span class="detail-fact">$13.9K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Total Mkt / % Revenue</div><div class="detail-vals"><span class="detail-fact" style="color:#E67E22">$184.9K</span><span class="detail-pct" style="color:#E67E22"> 14.2%</span></div></div>
+      </div></div>
+  </div>
+</div>
+<div class="month-detail">
+  <div class="month-detail-hdr" onclick="toggleDetail(&#39;jun-d&#39;)">
+    <h3>June 2026</h3><span>Total Marketing: $207,977</span>
+  </div>
+  <div class="month-detail-body" id="jun-d">
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#2E75B6">Qualified Leads</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">336</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact" style="color:#C0392B">329</span><span class="detail-pct" style="color:#C0392B"> 98%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#375623">Estimates</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">252</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact" style="color:#1D9E75">298</span><span class="detail-pct" style="color:#1D9E75"> 118%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#7B3F00">Estimate Value</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">$7.6M</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact">$8.5M</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#5C5C8A">Jobs</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">63</span></div></div>
+        <div class="detail-item"><div class="detail-label">Closed</div><div class="detail-vals"><span class="detail-fact" style="color:#C0392B">52</span><span class="detail-pct" style="color:#C0392B"> 83%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#1D5C4A">Revenue</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">$1.60M</span></div></div>
+        <div class="detail-item"><div class="detail-label">Closed</div><div class="detail-vals"><span class="detail-fact" style="color:#C0392B">$1.10M</span><span class="detail-pct" style="color:#C0392B"> 69%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#4A2E6B">Marketing Budget</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Budget Plan</div><div class="detail-vals"><span class="detail-plan">$168.0K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Perf Channels</div><div class="detail-vals"><span class="detail-fact">$173.3K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Non-Performance</div><div class="detail-vals"><span class="detail-fact">$21.0K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Total Mkt / % Revenue</div><div class="detail-vals"><span class="detail-fact" style="color:#C0392B">$194.3K</span><span class="detail-pct" style="color:#C0392B"> 17.7%</span></div></div>
+      </div></div>
+  </div>
+</div>
+<div class="month-detail">
+  <div class="month-detail-hdr" onclick="toggleDetail(&#39;jul-d&#39;)">
+    <h3>July 2026</h3><span>Total Marketing: $206,258</span>
+  </div>
+  <div class="month-detail-body" id="jul-d">
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#2E75B6">Qualified Leads</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">336</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact" style="color:#1D9E75">357</span><span class="detail-pct" style="color:#1D9E75"> 106%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#375623">Estimates</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">252</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact" style="color:#1D9E75">295</span><span class="detail-pct" style="color:#1D9E75"> 117%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#7B3F00">Estimate Value</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">$7.6M</span></div></div>
+        <div class="detail-item"><div class="detail-label">Fact</div><div class="detail-vals"><span class="detail-fact">$8.5M</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#5C5C8A">Jobs</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">63</span></div></div>
+        <div class="detail-item"><div class="detail-label">Closed</div><div class="detail-vals"><span class="detail-fact" style="color:#1D9E75">73</span><span class="detail-pct" style="color:#1D9E75"> 116%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#1D5C4A">Revenue</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-vals"><span class="detail-plan">$1.60M</span></div></div>
+        <div class="detail-item"><div class="detail-label">Closed</div><div class="detail-vals"><span class="detail-fact" style="color:#1D9E75">$1.90M</span><span class="detail-pct" style="color:#1D9E75"> 119%</span></div></div>
+      </div></div>
+    <div class="detail-section"><div class="detail-section-hdr" style="background:#4A2E6B">Marketing Budget</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Budget Plan</div><div class="detail-vals"><span class="detail-plan">$168.0K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Perf Channels</div><div class="detail-vals"><span class="detail-fact">$164.4K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Non-Performance</div><div class="detail-vals"><span class="detail-fact">$18.3K</span></div></div>
+        <div class="detail-item"><div class="detail-label">Total Mkt / % Revenue</div><div class="detail-vals"><span class="detail-fact" style="color:#E67E22">$182.7K</span><span class="detail-pct" style="color:#E67E22"> 9.6%</span></div></div>
+      </div></div>
   </div>
 </div>
 
+<script>
+function toggleDetail(id) { document.getElementById(id).classList.toggle('open'); }
+</script>
 </div>
 
 <!-- ═══════════════════════════ SUMMARY ════════════════════════════ -->
@@ -1313,5 +1618,6 @@
     }
   }
 </script>
-</body>
-</html>
+
+
+</body></html>
